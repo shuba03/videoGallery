@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Video Gallery</title>
+        <link rel="Stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+        <h1>New Video Gallery</h1>
+        <div class="row">
+            <div class="col">
+                <div class="feature-img">
+                    <img src="urban city.jpg" width="100%">
+                    <img src="Play-Icon.png" class="play-btn" onclick="playVideo('bridge.mp4')">
+                </div>
+            </div>
+            <div class="col">
+                <div class="small-img-row">
+                    <div class="small-img">
+                        <img src="creux-du-van-picture.jpg">
+                        <img src="Play-Icon.png" class="play-btn" onclick="playVideo('Creux De Van.mp4')">
+                    </div>
+                    <p>See more Clips you like</p>
+                </div>
+                <div class="small-img-row">
+                    <div class="small-img">
+                        <img src="parrot.jpg">
+                        <img src="Play-Icon.png" class="play-btn" onclick="playVideo('Bird.mp4')">
+                    </div>
+                    <p>See more Clips you like</p>
+                </div>
+                <div class="small-img-row">
+                    <div class="small-img">
+                        <img src="train-moving.jpg">
+                        <img src="Play-Icon.png" class="play-btn" onclick="playVideo('train.mp4')">
+                    </div>
+                    <p>See more Clips you like</p>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="video-player" id="videoPlayer">
+            <video width="100%" controls autoplay id="myVideo">
+                <source src="bridge.mp4" type="video/mp4">
+            </video>
+            <img src="close-button.png" class="close-btn" onclick="stopVideo()">
+        </div>
+        <script>
+            var videoPlayer = document.getElementById("videoPlayer");
+            var myVideo = document.getElementById("myVideo");
+            function stopVideo(){
+                videoPlayer.style.display="none";
+            }
+            function playVideo(file){
+                myVideo.src =file;
+                videoPlayer.style.display="block";
+            }
+        </script>
+
+    </body>
+</html>
